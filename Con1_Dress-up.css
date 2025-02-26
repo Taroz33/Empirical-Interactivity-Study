@@ -1,0 +1,268 @@
+/* General Page Layout */
+html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: url('Stimuli/dressuproom.jpeg') no-repeat center center/cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Header Styling (Match Home Page) */
+header {
+    background: #1e1e1e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+/* Dress-Up Container */
+.dress-up-container {
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+/* Speech Bubble Above Model */
+.speech-bubble {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    position: absolute;
+    top: -50px;
+    width: 300px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+/* Model Area */
+.model-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+/* Model Image */
+.model-image {
+    width: 320px;
+    margin-top: 20px;
+}
+
+/* Glasses Wrapper */
+.glasses-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 40%;
+}
+
+/* White Highlight Box for Glasses */
+.glasses-box {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    top: 30%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 200px; /* Adjust box width */
+    height: 80px;
+}
+
+/* Glasses Image on the Left */
+.glasses-left {
+    width: 180px;
+    position: relative;
+    transform: translateY(-10%);
+    margin-top: 15px；
+}
+
+/* Glasses Image on the Right */
+.glasses-right {
+    width: 220px;
+    position: relative;
+    transform: translateY(-10%);
+    margin-top: 15px；
+}
+
+/* Hide elements before clicking Explore */
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: white;
+    background: #1e1e1e;
+    padding: 15px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* === MATCH "START NOW" BUTTON STYLE FOR "EXPLORE" BUTTON === */
+.btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #f04;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background: #d00;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+.text-box {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    width: fit-content;
+    color: white; /* Make all text inside white */
+}
+
+/* Ensure h2 and p inside text-box are white */
+.text-box h2, 
+.text-box p {
+    color: white !important; /* Force white color */
+}
+
+/* Glass1 on Model's Face (Keep this same size) */
+#glass1-on-face {
+    position: absolute;
+    top: 26%; /* Position for Glass1 */
+    left: 49.85%;
+    transform: translate(-50%, -50%) rotate(-5deg); /* Rotate slightly */
+    width: 72px; /* Keep Glass1 small */
+    display: none; /* Initially hidden */
+}
+
+/* Glass2 on Model's Face (Make Larger) */
+#glass2-on-face {
+    position: absolute;
+    top: 26%; /* Keep it aligned with Glass1 */
+    left: 49.85%;
+    transform: translate(-50%, -50%) rotate(-5deg); /* Rotate slightly */
+    width: 96px; /* Make Glass2 larger */
+    display: none; /* Initially hidden */
+}
+
+/* When "Add" is clicked, ensure it shows up properly */
+#glass1-on-face.show, #glass2-on-face.show {
+    display: block;
+}
+
+/* 🆕 Question Bubble (Moves it to the right side) */
+.question-bubble {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    position: absolute;
+    top: 55%; /* Move it below the speech bubble */
+    right: 5%; /* Keep it aligned to the right */
+    width: 250px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🆕 Buttons inside the question bubble */
+.question-bubble button {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    background: #f04;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 🆕 Hover effect for buttons */
+.question-bubble button:hover {
+    background: #d00;
+}
+
+/* 🆕 Initially Hidden */
+.hidden {
+    display: none;
+}
+
+/* 🆕 Fixed "Add" & "Remove" buttons with proper background coverage */
+.glasses-buttons button {
+    display: block;
+    width: 90%; /* Slightly wider to ensure full text coverage */
+    margin: 4px auto; /* Adjust spacing */
+    padding: 6px 5px; /* Extra horizontal padding to ensure background covers full text */
+    font-size: 10px; /* Smaller text */
+    font-weight: bold;
+    text-align: center; /* Centers text */
+    background: #f04; /* Match question bubble */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Ensures no cutoff */
+}
+
+/* 🆕 Hover effect for "Add" & "Remove" buttons */
+.glasses-buttons button:hover {
+    background: #d00;
+}
