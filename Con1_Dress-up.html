@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dress Up Arita</title>
+    <link rel="stylesheet" href="Con1_Dress-up.css"> <!-- Link to CSS -->
+</head>
+<body>
+
+    <header>
+        <h1>Style Arita for Her Event</h1>
+        <nav>
+            <ul>
+                <li><a href="Con1_Main.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dress-up-container">
+        <!-- Initial Welcome Message -->
+        <div class="text-box" id="welcome-text">
+            <h2>Welcome to the Dress-Up Room</h2>
+            <p>Explore the styles and immerse yourself in the experience.</p>
+            <button class="btn" id="explore-btn">Explore</button> <!-- Explore Button -->
+        </div>
+
+        <!-- New Content (Hidden Initially) -->
+        <div id="interaction-content" class="hidden">
+            <div class="model-container">
+                
+                <!-- Speech Bubble Above Model -->
+                <div class="speech-bubble hidden" id="speech-bubble">
+                    <p>"I will attend the event, help me try out the style and select the glasses"</p>
+                </div>
+
+                <!-- 🆕 Question Bubble (Appears on Right Side) -->
+                <div class="question-bubble hidden" id="question-bubble">
+                    <p>Which one looks better for me?</p>
+                    <button id="choose-left">The pair of sunglasses on the left</button>
+                    <button id="choose-right">The pair of sunglasses on the right</button>
+                </div>
+
+                <!-- Glasses Selection Area -->
+                <div class="glasses-wrapper">
+                    
+                    <!-- Left Glasses Box -->
+                    <div class="glasses-box hidden" id="glasses-box-left">
+                        <img src="Stimuli/glass1.png" alt="Glasses Option 1" class="glasses-left hidden" id="glasses-left">
+                        <div class="glasses-buttons hidden">
+                            <button class="btn-small" id="add-glasses-left">Add</button>
+                            <button class="btn-small" id="remove-glasses-left">Remove</button>
+                        </div>
+                    </div>
+
+                    <!-- Right Glasses Box -->
+                    <div class="glasses-box hidden" id="glasses-box-right">
+                        <img src="Stimuli/glass2.png" alt="Glasses Option 2" class="glasses-right hidden" id="glasses-right">
+                        <div class="glasses-buttons hidden">
+                            <button class="btn-small" id="add-glasses-right">Add</button>
+                            <button class="btn-small" id="remove-glasses-right">Remove</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model Image with Glasses Overlay -->
+                <div class="model-wrapper">
+                    <img src="Stimuli/rawmodel.png" alt="Model" class="model-image hidden" id="model-image">
+                    
+                    <!-- Glass1 Copy (Appears on Model's Face) -->
+                    <img src="Stimuli/glass1 copy.png" alt="Glasses on Face" class="glasses-on-face hidden" id="glass1-on-face">
+                    
+                    <!-- Glass2 Copy (Appears on Model's Face) -->
+                    <img src="Stimuli/glass2 copy.png" alt="Glasses on Face" class="glasses-on-face hidden" id="glass2-on-face">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Lumea. All rights reserved.</p>
+    </footer>
+
+    <script>
+document.getElementById("explore-btn").addEventListener("click", function() {
+    document.getElementById("welcome-text").style.display = "none";
+
+    // Show model, speech bubble, question bubble, glasses options, glasses boxes, and buttons
+    document.getElementById("interaction-content").classList.remove("hidden");
+    document.getElementById("model-image").classList.remove("hidden");
+    document.getElementById("speech-bubble").classList.remove("hidden");
+    document.getElementById("question-bubble").classList.remove("hidden"); // Show question bubble
+    document.getElementById("glasses-box-left").classList.remove("hidden");
+    document.getElementById("glasses-box-right").classList.remove("hidden");
+    document.getElementById("glasses-left").classList.remove("hidden");
+    document.getElementById("glasses-right").classList.remove("hidden");
+    document.querySelectorAll(".glasses-buttons").forEach(button => button.classList.remove("hidden"));
+});
+
+// ✅ When clicking "Add" on Glass1, show "glass1_copy" on model's face
+document.getElementById("add-glasses-left").addEventListener("click", function() {
+    document.getElementById("glass1-on-face").classList.add("show");
+});
+
+// ✅ When clicking "Remove" on Glass1, hide "glass1_copy" from model's face
+document.getElementById("remove-glasses-left").addEventListener("click", function() {
+    document.getElementById("glass1-on-face").classList.remove("show");
+});
+
+// ✅ When clicking "Add" on Glass2, show "glass2_copy" on model's face
+document.getElementById("add-glasses-right").addEventListener("click", function() {
+    document.getElementById("glass2-on-face").classList.add("show");
+});
+
+// ✅ When clicking "Remove" on Glass2, hide "glass2_copy" from model's face
+document.getElementById("remove-glasses-right").addEventListener("click", function() {
+    document.getElementById("glass2-on-face").classList.remove("show");
+});
+
+// ✅ Confirmation Before Redirecting to Result Page
+document.getElementById("choose-left").addEventListener("click", function() {
+    let confirmChoice = confirm("Are you sure you want to choose the sunglasses on the left?");
+    if (confirmChoice) {
+        window.location.href = "con1_result-left.html"; // Redirects to result-left page
+    }
+});
+
+document.getElementById("choose-right").addEventListener("click", function() {
+    let confirmChoice = confirm("Are you sure you want to choose the sunglasses on the right?");
+    if (confirmChoice) {
+        window.location.href = "con1_result-right.html"; // Redirects to result-right page
+    }
+});
+
+
+    </script>
+
+</body>
+</html>
