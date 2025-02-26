@@ -6,7 +6,7 @@ html, body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-image: url('Stimuli/VI webpage2.png') no-repeat center center/cover;
+    background-image: url('Stimuli/VI webpage.png') no-repeat center center/cover;
     background-size: cover;
     background-attachment: fixed;
 }
